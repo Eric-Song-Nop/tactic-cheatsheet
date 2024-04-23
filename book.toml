@@ -1,10 +1,10 @@
 [book]
 authors = ["Seasawher"]
-language = "ja"
+language = "zh"
 multilingual = false
 src = "src"
-title = "Lean4 タクティク逆引きリスト"
-description = "「普段の数学を Lean でどう実現するのか」という疑問にお答えするための，タクティク逆引きリストです."
+title = "Lean4 Tactic CheatSheet"
+description = "Lean4 Tactic CheatSheet."
 
 [build]
 create-missing = false
@@ -13,5 +13,5 @@ build-dir = "book"
 [output.html]
 additional-js = ["assets/blockPlay.js", "assets/filePlay.js", "assets/fzf.umd.js", "assets/elasticlunr.js"]
 no-section-label = true
-git-repository-url = "https://github.com/lean-ja/tactic-cheatsheet"
-edit-url-template = "https://raw.githubusercontent.com/lean-ja/tactic-cheatsheet/main/{path}"
+git-repository-url = "https://github.com/Eric-Song-Nop/tactic-cheatsheet"
+edit-url-template = "https://raw.githubusercontent.com/Eric-Song-Nop/tactic-cheatsheet/main/{path}"
