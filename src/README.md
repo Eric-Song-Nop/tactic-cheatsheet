@@ -1,6 +1,6 @@
 # Lean4 策略(tactic)速查表
 
-本站点为 [lean-ja/tactic-cheatsheet](www.github.com/lean-ja/tactic-cheatsheet) 的中文翻译版本。
+本站点为 [lean-ja/tactic-cheatsheet](https://www.github.com/lean-ja/tactic-cheatsheet) 的中文翻译版本。
 
 为了回答“如何用Lean实现日常的数学"这样一个问题，我们整理了一个通过用例可以反向查找的常用策略列表。为了增加便利性，除了策略，我们还介绍了一些基本命令。
 
