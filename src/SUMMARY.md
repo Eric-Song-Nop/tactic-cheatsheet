@@ -1,8 +1,8 @@
 # Summary
 
-[Lean4 タクティク逆引きリスト](./README.md)
+[Lean4 策略速查表](./README.md)
 
-[リンク集](./links.md)
+[资料链接集合](./links.md)
 
 ---
 
