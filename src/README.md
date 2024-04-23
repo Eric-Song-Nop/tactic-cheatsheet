@@ -1,27 +1,24 @@
-# Lean4 タクティク逆引きリスト
+# Lean4 策略(tactic)速查表
 
-「普段の数学を Lean でどうやって実現するんだろう」という疑問に答えるために，よく使うタクティクをユースケースから逆引きできるようにまとめたリストです．より便利にするため，タクティクだけでなく基本的なコマンドも紹介しています．
+本站点为 [lean-ja/tactic-cheatsheet](www.github.com/lean-ja/tactic-cheatsheet) 的中文翻译版本。
 
-なおこのタクティクリストは全タクティクのリストではありません．全タクティクのリストが必要であれば [mathlib4 tactics](https://seasawher.github.io/mathlib4-tactics) を参照してください．
+为了回答“如何用Lean实现日常的数学"这样一个问题，我们整理了一个通过用例可以反向查找的常用策略列表。为了增加便利性，除了策略，我们还介绍了一些基本命令。
 
-> この文書は lean-ja が管理しています．誤りのご指摘，ご提案などは [GitHub リポジトリ](https://github.com/lean-ja/tactic-cheatsheet)からお願いします．
->
-> lean-ja の Discord サーバが[こちら](https://discord.gg/p32ZfnVawh)にあります．質問や相談などはこちらにどうぞ．
+如果您需要完整的策略列表，请查阅 [mathlib4 tactics](https://seasawher.github.io/mathlib4-tactics)。
 
-本書が気に入ったら，ぜひ GitHub からスター🌟をつけてください.
+> 这份策略列表是由lean-ja负责管理的。如果您发现了错误或有什么建议，请通过 [GitHub 仓库](https://github.com/lean-ja/tactic-cheatsheet)告知他们。
 
-## 本書の特色 😎
+> 本中文翻译版本由 [Ericoolen](www.eric-song-nop.github.io) 维护。如果您发现了错误或有什么建议，请通过 [GitHub 仓库](www.github.com/Eric-Song-Nop/tactic-cheatsheet)告知我。
+> 您可以在[这里](https://discord.gg/p32ZfnVawh)找到lean-ja的Discord服务器。可以在这里提问或进行讨论。
+> 您也可以加 QQ 群：521201572 一起讨论。
 
-* 本書のすべての Lean コードブロックはバージョン `{{#include ../lean-toolchain}}` で実際にエラーなく動くことを CI で確認しています．動かないコード例を見つけられた際はお手数ですが issue でご報告をお願いします．
+如果您喜欢这本书，不妨在GitHub上给一个星星🌟。
 
-* 本書のすべての Lean コードブロックは，マウスを重ねると Lean Playground へジャンプするボタン <a class="fa fa-external-link"></a> が現れるようになっています. ぜひ実際にコードを実行してみてください．
 
-* コードブロックの中には，`import` 文が足りないなどの理由でそのままでは実行できないものがあります．そうした場合は画面右上の実行ボタン <i class="fa fa-play"></i> をクリックしてください．
+## 本书的特色 😎
 
-## スポンサー
+* 本书中的所有Lean代码块都经过CI（持续集成服务）的确认，可以在版本 `{{#include ../lean-toolchain}}` 下正常运行。如果您发现任何无法运行的代码例，请通过issue告诉我们。
 
-このプロジェクトは [Proxima Technology](https://proxima-ai-tech.com/) 様よりご支援を頂いています.
+* 将鼠标悬停在代码块上，您会看到一个跳转至Lean Playground的按钮 <a class="fa fa-external-link"></a>，您可以点击它执行代码。
 
-![logo of Proxima Technology](./image/proxima.png)
-
-Proxima Technology（プロキシマテクノロジー）は数学の社会実装を目指し, その⼀環としてモデル予測制御の民主化を掲げているAIスタートアップ企業です．数理科学の力で社会を変えることを企業の使命としています．
+* 代码块中可能存在缺少 `import` 语句等问题，导致它们无法直接运行。在此情况下，请点击屏幕右上角的执行按钮 <i class="fa fa-play"></i>。
