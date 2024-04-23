@@ -1,28 +1,28 @@
 /-
 # aesop
 
-`aesop` は，Automated Extensible Search for Obvious Proofs (自明な証明の拡張可能な自動探索)からその名があるタクティクです．Isabell の `auto` と似ています．`aesop` は `intro` や `simp` を使用してルーチンな証明を自動で行ってくれます．
+`aesop` 是： Automated Extensible Search for Obvious Proofs (可扩展的自明证明的自动探索)的缩写。与Isabell的`auto`类似，`aesop`会使用`intro`和`simp`来自动完成例行证明。
 -/
-import Aesop -- `aesop` を使用するため
-import Mathlib.Init.Function -- `Injective` を使用するため
+import Aesop -- 引入依赖以使用 `aesop`
+import Mathlib.Init.Function -- 引入依赖以使用 `Injective`
 
--- 以下 `X` `Y` `Z`を集合とする
+-- 声明集合 `X`, `Y`, `Z`
 variable {X Y Z : Type}
 
 open Function
 
--- 合成 `g ∘ f` が単射なら，`f` も単射
+-- 如果复合 `g ∘ f` 是单射，则 `f` 也是单射。
 example {f : X → Y} {g : Y → Z} (hgfinj : Injective (g ∘ f)) : Injective f := by
   rw [Injective]
   show ∀ ⦃a₁ a₂ : X⦄, f a₁ = f a₂ → a₁ = a₂
 
-  -- 示すべきことがまだまだあるように見えるが，一発で証明が終わる
+  -- 虽然看起来还有很多需要证明的地方，但实际上可以一次性完成证明。
   aesop
 
 /-!
 ## aesop?
 
-`aesop` が成功するとき，`aesop?` に置き換えるとゴールを達成するのにどんなタクティクを使用したか教えてくれます．
+当 `aesop` 成功时，如果你将其替换为 `aesop?`，它会告诉你实现目标使用了哪些策略。
 -/
 
 example {f : X → Y} {g : Y → Z} (hgfinj : Injective (g ∘ f)) : Injective f := by
@@ -36,13 +36,17 @@ example {f : X → Y} {g : Y → Z} (hgfinj : Injective (g ∘ f)) : Injective f
   -/
   aesop?
 
-/-! ## 補足
-より詳細には `aesop` は下記のような性質を持ちます:
+/-! ## 补充
+`aesop` 具有如下特性：
 
-* `simp` と同様に，`@[aesop]` という属性(attribute)を付けることで補題や定義を登録し，`aesop` に使用させることができます．
-* `aesop` は登録されたルールを最初のゴールに適用しようとします．成功してサブゴールが生成されたら，`aesop` はサブゴールにも再帰的にルールを適用し，探索ツリーを構築します．
-* 探索ツリーは最良優先探索(best-first search)により探索されます．ルールには有用である可能性が高いか低いかもマークすることができ，`aesop` は探索ツリー内のより有望そうなゴールを先に調べます．
-* `aesop` はまず `simp_all` を用いてゴールを正規化するため，`simp` が使用する補題は `aesop` にも使用されます．
+* 类似于 `simp`，您可以通过添加 `@[aesop]` 属性(attribute)来注册引理或者定义，并让 `aesop` 使用它们。
+* `aesop` 将尝试将注册的规则应用于最初的目标。如果成功并产生了子目标，`aesop` 会递归地将规则应用于子目标，构建搜索树。
+* 搜索树通过最佳优先搜索(best-first search)进行搜索。规则可以被标记为可能非常有用或较不有用，`aesop` 会首先检查搜索树中看起来更有希望的目标。
+* `aesop` 首先使用 `simp_all` 来标准化目标，所以 `simp` 使用的引理也会被 `aesop` 使用。
 
-もっと詳しいことが知りたい方は，[aesopのリポジトリ](https://github.com/leanprover-community/aesop)をご参照ください．
+如果您想了解更多详细信息，请参见 [aesop的仓库](https://github.com/leanprover-community/aesop)。
+-/
+
+/-! ## 译者补充
+在使用 `aesop` 后，应尽量将其替换为详细的策略以增加证明的可读性,稳定性。
 -/
