@@ -20,7 +20,7 @@
 - [#synth: 型クラスの検査](./Command/Synth.md)
 - [#time: 実行時間計測](./Command/Time.md)
 
-# タクティク紹介
+# Tactics 介绍
 
 - [ac_rfl: 可換性と結合性を使う](./Tactic/AcRfl.md)
 - [aesop: 自明的证明的自动搜索](./Tactic/Aesop.md)
