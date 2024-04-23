@@ -8,7 +8,7 @@
 
 > 这份策略列表是由lean-ja负责管理的。如果您发现了错误或有什么建议，请通过 [GitHub 仓库](https://github.com/lean-ja/tactic-cheatsheet)告知他们。
 
-> 本中文翻译版本由 [Ericoolen](www.eric-song-nop.github.io) 维护。如果您发现了错误或有什么建议，请通过 [GitHub 仓库](www.github.com/Eric-Song-Nop/tactic-cheatsheet)告知我。
+> 本中文翻译版本由 [Ericoolen](https://eric-song-nop.github.io) 维护。如果您发现了错误或有什么建议，请通过 [GitHub 仓库](https://github.com/eric-song-nop/tactic-cheatsheet)告知我。
 > 您可以在[这里](https://discord.gg/p32ZfnVawh)找到lean-ja的Discord服务器。可以在这里提问或进行讨论。
 > 您也可以加 QQ 群：521201572 一起讨论。
 
