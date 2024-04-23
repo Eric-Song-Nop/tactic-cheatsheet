@@ -1,29 +1,29 @@
 /- # apply .. at
 
-`apply` は通常ゴールに対して適用しますが, `at` を付けてローカルコンテキストの命題などに対して使用するという使い方ができます．
+`apply` 常用于应用于目标（goal），但添加 `at` 后可以用于局部上下文（local context）中的命题等。
 
-実際にはこの構文は `apply` と似ているだけで，別のタクティクです．この `at` がついている構文は通常の `apply` とは異なり，後方推論ではなく前方推論になります．
+实际上这个带 `at` 的语法和 `apply` 只是相似，并不相同，它是另一个策略。这个带 `at` 的语法与常规的 `apply` 不同，不是后向推理（backward reasoning），而是前向推理（forward reasoning）。
 -/
 import Mathlib.Tactic.ApplyAt
 
 variable (P Q : Prop)
 
 example (h : P → Q) (hP : P) : Q := by
-  -- `hP` に `h` を適用してしまう
+  -- 将 `h` 应用于 `hP`
   apply h at hP
 
-  -- `hP` が書き換わる
+  -- `hP` 被重写
   guard_hyp hP : Q
 
   assumption
 
-/-! 便利な記法以上のものではなく，他のタクティクを利用しても同じことができます．-/
+/-! 它不仅仅是一个方便的记法，你也可以使用其他策略来实现同样的效果。-/
 
 example (h : P → Q) (hP : P) : Q := by
-  -- `apply at` は `replace` と同じように動作する
+  -- `apply at` 可以像 `replace` 一样使用
   replace hP := h hP
 
-  -- `hP` が書き換わる
+  -- `hP` 被重写
   guard_hyp hP : Q
 
   assumption
