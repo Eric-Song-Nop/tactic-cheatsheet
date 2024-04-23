@@ -1,18 +1,18 @@
 /- # all_goals
 
-`all_goals` は，後に続くタクティクをすべてのゴールに対して適用します．
+`all_goals` 将会把跟随其后的策略应用到所有目标上。
 -/
 variable (P Q : Prop)
 
 example (hP : P) (hQ : Q) : P ∧ Q := by
-  -- `P` と `Q` をそれぞれ示せばよい
+  -- 我们需要分别证明 `P` 和 `Q`
   constructor
 
-  -- どちらも仮定から従うので，
-  -- 両方に `assumption` を適用する
+  -- 两者都可以由假设导出，
+  -- 所以我们对两者都应用 `assumption` 策略
   all_goals assumption
 
-/-! `all_goals` には，タクティクブロックを渡すこともできます．-/
+/-! 你也可以向 `all_goals` 传递一个策略块。-/
 
 example {R : Prop} (hnP : ¬ P) : (P → R) ∧ (P → Q) := by
   constructor
@@ -21,8 +21,8 @@ example {R : Prop} (hnP : ¬ P) : (P → R) ∧ (P → Q) := by
     contradiction
 
 /-!
-## タクティク結合子 `<;>`
-タクティク結合子 `<;>` によってもほぼ同じことができます．
+## 策略组合 `<;>`
+策略组合 `<;>` 也可以完成类似的工作。
 -/
 
 example (hP : P) (hQ : Q) : P ∧ Q := by
@@ -33,6 +33,12 @@ example (hP : P) (hQ : Q) : P ∧ Q := by
 
 実際に以下のような例ではその違いが現れます．
 -/
+/-! 然而，`<>` 和 `all_goals` 并不完全相同。
+`all_goals` 会将随后的策略或策略块，在"所有未解决目标" 上执行
+而`<;>` 是将随后的策略执行在"`<;>`前面的策略生成的所有次级目标"上。
+
+实际上，如下例子所示，两者之间的差异是显而易见的。
+-/
 
 variable (P Q R : Prop)
 
@@ -41,7 +47,7 @@ example (hP : P) (hQ : Q) (hR : R) : (P ∧ Q) ∧ R := by
 
   constructor <;> try assumption
 
-  -- まだ示すべきことが残っている
+  -- 依然有证明待完成的部分
   show R
   assumption
 
@@ -52,5 +58,5 @@ example (hP : P) (hQ : Q) (hR : R) : (P ∧ Q) ∧ R := by
   all_goals
     try assumption
 
-  -- 証明完了
+  -- 证明完成
   done
