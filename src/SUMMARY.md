@@ -6,10 +6,10 @@
 
 ---
 
-# コマンド紹介
+# Command 命令介绍
 
-- [#check_failure: 意図的なエラー](./Command/CheckFailure.md)
-- [#check: 型を調べる](./Command/Check.md)
+- [#check_failure: 故意的错误](./Command/CheckFailure.md)
+- [#check: 检查类型](./Command/Check.md)
 - [#eval: 式を評価する](./Command/Eval.md)
 - [#find: ライブラリ検索](./Command/Find.md)
 - [#guard_msgs: 出力メッセージのテスト](./Command/GuardMsgs.md)
@@ -20,7 +20,7 @@
 - [#synth: 型クラスの検査](./Command/Synth.md)
 - [#time: 実行時間計測](./Command/Time.md)
 
-# Tactics 介绍
+# Tactics 策略介绍
 
 - [ac_rfl: 可換性と結合性を使う](./Tactic/AcRfl.md)
 - [aesop: 自明的证明的自动搜索](./Tactic/Aesop.md)
