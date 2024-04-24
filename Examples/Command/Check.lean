@@ -4,7 +4,7 @@
 
 ## 基础类型 -/
 
-import Mathlib.Init.Set -- `Set` を使用するため --#
+import Mathlib.Init.Set -- 引入以使用 `Set` --#
 
 -- 字符
 #check 'a'
