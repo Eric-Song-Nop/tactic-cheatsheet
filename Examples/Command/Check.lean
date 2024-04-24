@@ -3,8 +3,8 @@
 `#check` 命令用于显示项的类型。在 Lean 中，所有项都有类型，因此可以对任何项使用。使用命令 `#check term` 来显示 `term` 的类型。相反，如果你想确认 `term` 的类型是 `T`，可以使用 `example` 命令并编写 `example : T := term`。
 
 ## 基础类型 -/
-
-import Mathlib.Init.Set -- 引入以使用 `Set` --#
+-- 引入以使用 `Set`
+import Mathlib.Init.Set
 
 -- 字符
 #check 'a'
