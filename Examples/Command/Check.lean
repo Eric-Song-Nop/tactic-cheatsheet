@@ -4,6 +4,8 @@
 
 ## 基础类型 -/
 
+import Mathlib.Init.Set -- `Set` を使用するため --#
+
 -- 字符
 #check 'a'
 
